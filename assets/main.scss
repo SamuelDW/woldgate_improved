@@ -1,6 +1,12 @@
-// @import 'abstracts/variables';
+@import 'abstracts/variables';
 // @import 'abstracts/functions';
-// @import 'abstracts/mixins';
-// @import 'abstracts/placeholders';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
 
 @import 'vendors/unsemantic-grid-responsive-tablet.scss';
+
+@import 'reset/typgography';
+@import 'reset/base';
+
+@import 'layout/header';
+@import 'layout/navigation';

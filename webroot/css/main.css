@@ -1,3 +1,25 @@
+/**
+ * Base Greens
+ */
+/**
+ * Base Blues
+ */
+/**
+ * Base Miscellaneous
+ */
+/**
+ * Header Variables
+ */
+/**
+ * Breakpoints
+ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+.nav-link a {
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+}
+
 /* ================================================================== */
 /* This file has a mobile-to-tablet, and tablet-to-desktop breakpoint */
 /* ================================================================== */
@@ -108,7 +130,7 @@
 .grid-container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1200px;
+  max-width: 100%;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -2073,6 +2095,81 @@
     clear: both;
     width: 100%;
   }
+}
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu";
+}
+
+html {
+  font-size: 100%;
+}
+
+header {
+  background-color: white;
+  color: #e0e467;
+}
+header .header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0;
+}
+header #mobile-nav {
+  text-align: right;
+}
+header #hamburger-menu {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #0d5435;
+  font-weight: 900;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+header #secondary-menu {
+  text-align: center;
+  background-color: #0d5435;
+  color: white;
+}
+header .header-logo,
+header #header-logo {
+  max-width: 100%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 100%;
+  z-index: 100;
+  background-color: #0d5435;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.show {
+  display: block;
+}
+
+.nav-link {
+  padding: 15px;
+  text-align: center;
+  display: grid;
+}
+.link-icon {
+  padding-right: 5px;
+}
+
+.nav-header {
+  margin: 0;
+  font-size: 1.4rem;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=main.css.map */

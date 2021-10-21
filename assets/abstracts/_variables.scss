@@ -1,0 +1,47 @@
+/**
+ * Base Greens
+ */
+$dark-grass-green: hsl(154, 73%, 19%);
+$vibrant-green: hsl(63, 88%, 44%);
+$frog-green: hsl(105, 56%, 44%);
+$faded-green: hsl(78, 50%, 43%);
+$deep-green: hsl(118, 42%, 51%);
+$dark-grass-green-transparent: hsla(154, 73%, 19%, 0.9);
+
+/**
+ * Base Blues
+ */
+ $blue-sky: hsl(206, 64%, 65%);
+ $water-blue: hsl(187, 33%, 58%);
+ $ocean-blue: hsl(204, 84%, 38%);
+ $faded-blue: hsl(203, 78%, 81%);
+ $dirty-blue: hsl(191, 34%, 63%);
+ $river-blue: hsl(203, 90%, 39%);
+
+/**
+ * Base Miscellaneous
+ */
+$faded-yellow: hsl(62, 70%, 65%);
+$purple: hsl(251, 29%, 51%);
+$faded-orange: hsl(15, 75%, 62%);
+$white: hsl(0, 0%, 100%);
+
+/**
+ * Header Variables
+ */
+$header-background: $white;
+$header-primary-font-colour: $faded-yellow;
+$header-bottom-border-colour: $blue-sky;
+$primary-background: $dark-grass-green;
+$header-secondary-font-colour: $white;
+$header-transparent-background: $dark-grass-green-transparent;
+
+/**
+ * Breakpoints
+ */
+$breakpoints: (
+    'small': (max-width: 767px),
+    'medium': (min-width: 768px),
+    'large': (min-width: 1025px),
+)
+

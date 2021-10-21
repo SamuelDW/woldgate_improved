@@ -12,7 +12,9 @@
  * @since         0.10.0
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  * @var \App\View\AppView $this
+ *
  */
+
 $siteDescription = "Woldgate School and Sixth Form College, an Academy, is part of the
 Wolds Learning Partnership, a charitable company limited by guarantee,
 registered in England and Wales with Company Number: 10518602. 
@@ -28,6 +30,7 @@ Registered Office: 92 Kilnwick Road Pocklington, York YO42 2LL. "
         <meta name="description" content="<?= $siteDescription ?>">
 
         <title><?= $this->fetch('title'); ?></title>
+        <?= $this->Html->meta('icon', '/shield.ico', ['type' => 'icon']) ?>
 
         <?= $this->Html->css([
             'main'
@@ -38,5 +41,6 @@ Registered Office: 92 Kilnwick Road Pocklington, York YO42 2LL. "
     </head>
     <body>
         <?= $this->element('header'); ?>
+        <h1 style="height:2000px">Hello</h1>
     </body>
 </html>

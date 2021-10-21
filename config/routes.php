@@ -48,7 +48,10 @@ $routes->scope('/', function (RouteBuilder $builder) {
     /*
      * Base url 
      */
-    $builder->connect('/', ['controller' => 'Woldgate', 'action' => 'index', 'home']);
+    $builder->connect('/', [
+        'controller' => 'Woldgate',
+        'action' => 'index'
+    ]);
 
     /*
      * ...and connect the rest of 'Pages' controller's URLs.
