@@ -1,0 +1,296 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.site-header {
+  padding-block-start: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+@media only screen and (min-width: 768px) {
+  .site-header {
+    flex-direction: row;
+  }
+}
+
+.site-header ul:not(.navigation-wrapper ul) {
+  list-style: none;
+  padding-inline-start: 0;
+  margin-block: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media only screen and (min-width: 768px) {
+  .site-header ul:not(.navigation-wrapper ul) {
+    grid-template-columns: repeat(4, 1fr);
+    min-width: 50%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .site-header ul:not(.navigation-wrapper ul) {
+    min-width: 35%;
+  }
+}
+
+.site-header ul:not(.menu-item, .menu-dropdown) li {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  padding-block: 0.2rem;
+}
+@media only screen and (min-width: 768px) {
+  .site-header ul:not(.menu-item, .menu-dropdown) li:not(:last-child) {
+    border-right: 1px solid darkgreen;
+  }
+}
+
+.site-header ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.site-header .search {
+  padding-block: 1rem;
+  padding-inline: 2rem;
+}
+@media only screen and (min-width: 768px) {
+  .site-header .search {
+    padding-inline: 0 1rem;
+    padding-block: 0;
+    min-width: 50%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .site-header .search {
+    min-width: 35%;
+  }
+}
+
+.search form {
+  display: flex;
+  margin-inline: 10px;
+}
+
+.search .site-search {
+  flex-basis: 75%;
+}
+
+.search .submit {
+  flex-basis: 25%;
+}
+
+.search .submit {
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.header-border {
+  border: 2px solid #9EC4D9;
+  width: 100%;
+  margin-block-start: 0.5rem;
+}
+
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  height: 3rem;
+  margin-inline-end: 2rem;
+}
+.hamburger div {
+  width: 1.625rem;
+  height: 0.125rem;
+  background-color: darkgreen;
+  margin: 0.375rem 0;
+}
+
+.navigation-wrapper {
+  display: flex;
+  width: 100%;
+  padding-block: 0.5rem;
+  border-bottom: 0.25rem solid darkgreen;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.navigation-wrapper figure {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: start;
+}
+@media only screen and (min-width: 1024px) {
+  .navigation-wrapper figure {
+    flex-basis: 25%;
+  }
+}
+
+.navigation-wrapper figure img {
+  margin-inline-start: 2rem;
+  max-height: 74px;
+}
+
+.navigation-wrapper .navigation-icon {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: end;
+}
+@media only screen and (min-width: 1024px) {
+  .navigation-wrapper .navigation-icon {
+    display: none;
+  }
+}
+
+.navigation-wrapper nav {
+  flex-basis: 100%;
+  padding-inline: 2rem;
+  padding-block-end: 1rem;
+}
+@media only screen and (min-width: 1024px) {
+  .navigation-wrapper nav {
+    flex-basis: 75%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding-block-end: 0;
+  }
+}
+
+.navigation-wrapper nav ul {
+  list-style: none;
+  padding-inline-start: 0rem;
+}
+
+.menu-item {
+  border-bottom: 1px solid grey;
+  margin-block: 0;
+}
+@media only screen and (min-width: 1024px) {
+  .menu-item {
+    border: none;
+    position: relative;
+  }
+}
+
+.menu-item li {
+  padding-block: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (min-width: 1024px) {
+  .menu-item li {
+    padding-inline-start: 1rem;
+  }
+}
+
+.menu-item[aria-haspopup=true] li:not(.menu-dropdown li)::after {
+  content: "+";
+}
+@media only screen and (min-width: 1024px) {
+  .menu-item[aria-haspopup=true] li:not(.menu-dropdown li)::after {
+    content: none;
+  }
+}
+
+.menu-dropdown li {
+  border: none;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+}
+
+.menu-dropdown li::after {
+  content: none;
+}
+
+.menu-item .menu-dropdown[aria-expanded=false] {
+  display: none;
+}
+
+.menu-item .menu-dropdown[aria-expanded=true] {
+  display: block;
+}
+@media only screen and (min-width: 1024px) {
+  .menu-item .menu-dropdown[aria-expanded=true] {
+    position: absolute;
+    bottom: -165px;
+    background-color: darkgreen;
+    color: white;
+    z-index: 1;
+  }
+}
+
+[aria-hidden=true] {
+  display: none;
+}
+
+/*# sourceMappingURL=app.css.map */
