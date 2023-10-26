@@ -4,6 +4,8 @@ declare(strict_types=1);
 /**
  * @var \App\View\AppView $this
  */
+
+ $isDesktop = ($this->getRequest()->is('mobile') || $this->getRequest()->is('tablet'));
 ?>
 <header class="site-header">
     <ul>
@@ -56,14 +58,14 @@ declare(strict_types=1);
         </figure>
         
         <div class="navigation-icon">
-            <div class="hamburger" tabindex="0">
+            <div class="hamburger" tabindex="0" role="button"   aria-label="Open Menu" aria-controls="menu">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
         </div>
 
-        <nav aria-hidden="true" aria-expanded="false">
+        <nav aria-hidden="<?= $isDesktop ? 'true' : 'false' ?>" aria-expanded="false" id="menu">
             <ul class="menu-item" role="menubar" aria-haspopup="true">
                 <li tabindex="0" role="menuitem">About Us</li>
                 <ul class="menu-dropdown" role="menu" aria-expanded="false">
@@ -91,63 +93,18 @@ declare(strict_types=1);
             <ul class="menu-item" role="menubar" aria-haspopup="true">
                 <li tabindex="0" role="menuitem">Curriculum</li>
                 <ul class="menu-dropdown" role="menu" aria-expanded="false">
-                    <li tabindex="0" role="menuitem">Headteacher's Welcome</li>
-                    <li tabindex="0">Statutory Information</li>
+                    <li tabindex="0" role="menuitem">Our Curriculum</li>
+                    <li tabindex="0" role="menuitem">Careers</li>
                 </ul>
             </ul>
 
             <ul class="menu-item" role="menubar" aria-haspopup="true">
                 <li tabindex="0" role="menuitem">News</li>
-                <ul class="menu-dropdown" role="menu" aria-expanded="false">
-                    <li tabindex="0" role="menuitem">Headteacher's Welcome</li>
-                    <li tabindex="0">Statutory Information</li>
-                </ul>
             </ul>
 
             <ul class="menu-item" role="menubar" aria-haspopup="true">
                 <li tabindex="0" role="menuitem">Contact Us</li>
-                <ul class="menu-dropdown" role="menu" aria-expanded="false">
-                    <li tabindex="0" role="menuitem">Headteacher's Welcome</li>
-                    <li tabindex="0">Statutory Information</li>
-                </ul>
             </ul>
         </nav>
     </div>
 </header>
-
-<script>
-    const menuItems = document.querySelectorAll('[role="menubar"')
-    const hamburger = document.querySelector('.hamburger')
-    const navigationMenu = document.querySelector('nav')
-
-    hamburger.addEventListener('click', () => {
-        const isVisible = navigationMenu.getAttribute('aria-hidden') != 'false'
-        const isExpanded = navigationMenu.getAttribute('aria-expanded') == 'false'
-        navigationMenu.setAttribute('aria-hidden', isVisible ? 'false' : 'true')
-        navigationMenu.setAttribute('aria-expanded', isExpanded ? 'true' : 'false')
-    })
-
-    hamburger.addEventListener('keydown', (e) => {
-        if (e.key !== 'Enter') return
-        
-        const isVisible = navigationMenu.getAttribute('aria-hidden') != 'false'
-        const isExpanded = navigationMenu.getAttribute('aria-expanded') == 'false'
-        navigationMenu.setAttribute('aria-hidden', isVisible ? 'false' : 'true')
-        navigationMenu.setAttribute('aria-expanded', isExpanded ? 'true' : 'false')
-    })
-
-    menuItems.forEach(menuItem => {
-        menuItem.addEventListener('click', () => {
-            const dropdown = menuItem.querySelector('ul')
-            const isExpanded = dropdown.getAttribute('aria-expanded') != 'false'
-            dropdown.setAttribute('aria-expanded', isExpanded ? 'false' : 'true')
-        })
-
-        menuItem.addEventListener('keydown', (e) => {
-            if (e.key !== 'Enter') return
-            const dropdown = menuItem.querySelector('ul')
-            const isExpanded = dropdown.getAttribute('aria-expanded') != 'false'
-            dropdown.setAttribute('aria-expanded', isExpanded ? 'false' : 'true')
-        })
-    })
-</script>

@@ -14,7 +14,13 @@
  * @var \App\View\AppView $this
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+ $this->assign('title', 'Woldgate School and Sixth Form');
+
+ $this->Breadcrumbs->prepend('Home', [
+    'prefix' => false,
+    'controller' => 'Woldgate',
+    'action' => 'index',
+]);
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +28,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
@@ -35,11 +40,36 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 <body>
     <?= $this->element('Navigation/header') ?>
+    <?= $this->Breadcrumbs->render([
+        'class' => 'breadcrumbs',
+    ]) ?>
     <main class="main">
         <div class="container">
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
         </div>
     </main>
+    <?= $this->element('Navigation/footer') ?>
+
+    <?= $this->Html->script('navigation/header') ?>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement":
+            [
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item":
+                    {
+                        "@id": "localhost/",
+                        "name": "Home",
+                    }
+                }
+            ]
+        }
+    </script>
 </body>
 </html>

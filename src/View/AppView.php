@@ -37,5 +37,9 @@ class AppView extends View
      */
     public function initialize(): void
     {
+        $this->loadHelper('Url');
+        $this->loadHelper('Breadcrumbs');
+        $this->loadHelper('Html');
+        $this->loadHelper('Paginator');
     }
 }

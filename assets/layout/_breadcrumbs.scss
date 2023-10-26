@@ -1,0 +1,25 @@
+.breadcrumbs {
+    list-style: none;
+    padding-inline-start: 2rem;
+    background-color: #DBEE50;
+    margin-block: 0;
+    height: 4.375rem;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.breadcrumbs li a {
+    text-decoration: none;
+    color: darkgreen;
+}
+
+.breadcrumbs li:first-child::before {
+    content: none;
+}
+
+.breadcrumbs li::before {
+    content: ">";
+    padding-inline: .625rem;
+    font-weight: normal;
+}

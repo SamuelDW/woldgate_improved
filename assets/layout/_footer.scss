@@ -1,0 +1,94 @@
+footer {
+    background-color: #0D5435;
+    color: white;
+}
+
+.footer-information {
+    // display: grid;
+    // grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    // flex-wrap: wrap;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    text-align: center;
+    padding-inline: 2rem;
+    padding-block-end: 1rem;
+
+    @include tablet() {
+        
+    }
+
+    @include large() {
+        column-gap: 5rem;
+        flex-wrap: nowrap;
+    }
+}
+
+footer figure:first-child {
+    padding-inline-start: 2rem;
+    padding-block: 2rem;
+
+    @include tablet() {
+        padding-inline-start: 6rem;
+    }
+
+    @include large() {
+        padding-inline-start: 8rem;
+    }
+}
+
+.footer-information section {
+    white-space: nowrap;
+    width: min-content;
+    flex-basis: 100%;
+
+    @include tablet() {
+        flex-basis: 50%;
+    }
+
+    @include large() {
+        flex-basis: 25%;
+    } 
+}
+
+.footer-information figure {
+    @include tablet() {
+        flex-basis: 50%;
+    }
+
+    @include large() {
+        flex-basis: 25%;
+    }
+}
+
+
+.footer-information section ul {
+    @include resetUnorderedList;
+}
+
+.company-information {
+    font-style: italic;
+    padding-inline: 2rem;
+    padding-block-end: 3rem;
+    text-align: justify;
+}
+
+.useful-links {
+    @include resetUnorderedList;
+    text-align: center;
+    text-transform: uppercase;
+    padding-block-end: 2rem;
+
+    @include large() {
+        display: flex;
+        padding-inline-start: 1rem;
+    }
+}
+
+.useful-links li {
+    padding-inline: 1rem;
+    
+    &:not(:last-child) {
+        border-right: 2px solid white;
+    }
+}

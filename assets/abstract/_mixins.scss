@@ -19,3 +19,15 @@ $desktop: 1280;
         @content;
     }
 }
+
+@mixin flex($justifyContent, $flexDirection: row) {
+    display: flex;
+    justify-content: $justifyContent;
+    flex-direction: $flexDirection;
+}
+
+@mixin resetUnorderedList() {
+    list-style: none;
+    padding-inline-start: 0;
+    margin-block: 0;
+}

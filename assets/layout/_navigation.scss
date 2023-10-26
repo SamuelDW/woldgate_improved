@@ -10,8 +10,7 @@
 
 .navigation-wrapper figure {
     flex-basis: 50%;
-    display: flex;
-    justify-content: start;
+    @include flex(start);
 
     @include large() {
         flex-basis: 25%;
@@ -25,8 +24,8 @@
 
 .navigation-wrapper .navigation-icon {
     flex-basis: 50%;
-    display: flex;
-    justify-content: end;
+    @include flex(end);
+    align-items: center;
 
     @include large() {
         display: none;
@@ -39,11 +38,11 @@
     padding-block-end: 1rem;
 
     @include large() {
-        // display: flex;
         flex-basis: 75%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         padding-block-end: 0;
+        padding-inline-end: 0;
     }
 }
 
@@ -63,10 +62,8 @@
 }
 .menu-item li {
     padding-block: 0.5rem;
-    display: flex;
-    justify-content: space-between;
+    @include flex(space-between);
     
-
     @include large() {
         padding-inline-start: 1rem;
     }
@@ -99,13 +96,17 @@
 
     @include large() {
         position: absolute;
-        bottom: -165px;
+        bottom: -141px;
         background-color: darkgreen;
         color: white;
         z-index: 1;
+        white-space: nowrap;
+        width: 100%;
     }
 }
 
 [aria-hidden="true"] {
     display: none;
 } 
+
+// 1024 1453
