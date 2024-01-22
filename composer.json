@@ -18,7 +18,7 @@
         "dereuromark/cakephp-ide-helper": "^1.18",
         "josegonzalez/dotenv": "^4.0",
         "phpstan/phpstan": "^1.10",
-        "phpunit/phpunit": "^9.6"
+        "phpunit/phpunit": "^10.5"
     },
     "suggest": {
         "markstory/asset_compress": "An asset compression plugin which provides file concatenation and a flexible filter system for preprocessing and minification.",
